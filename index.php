@@ -13,7 +13,6 @@ $link = mysqli_connect('localhost', 'root', '', 'db')
     or die("??? " . mysqli_error($link)); 
     
 $link->set_charset('cp1251');
-
 $query ="SELECT * FROM information";
  
 $result = mysqli_query($link, $query) or die("??? " . mysqli_error($link)); 
