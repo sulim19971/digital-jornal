@@ -31,6 +31,6 @@ if($result)
     
     mysqli_free_result($result);
 }
- //ntcnjdsq rjvvtynfbjjgfasgoagjaojogajogajogajogajogjaogjojogajoagoj
+ //Рома лох
 mysqli_close($link);
  ?>
