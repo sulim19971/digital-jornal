@@ -31,6 +31,6 @@ if($result)
     
     mysqli_free_result($result);
 }
- //Рома лох
+ //s;dfmosng;kjng;ojn;jrsg
 mysqli_close($link);
  ?>
