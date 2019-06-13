@@ -6,8 +6,8 @@
 </head>
 <body>
 	<form method='get' action='page1.php'>
-    <input type='input' name='group'> <!--инпут в который вводим группу -->
-     <input type='input' name='discipline'> <!--инпут в который вводим предмет -->
+    <input type='input' name='group' placeholder="группа"> <!--инпут в который вводим группу -->
+     <input type='input' name='discipline' placeholder="предмет"> <!--инпут в который вводим предмет -->
     <input type='submit'>
 </form>
 </body>
