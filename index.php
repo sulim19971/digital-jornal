@@ -11,7 +11,7 @@
 
 $link = mysqli_connect('localhost', 'root', '', 'db') 
     or die("??? " . mysqli_error($link)); 
-    
+
 $link->set_charset('cp1251');
 
 $query ="SELECT * FROM information";
@@ -31,7 +31,7 @@ if($result)
         echo "</tr>";
     }
     echo "</table>";
-     
+     //dd
     
     mysqli_free_result($result);
 }
