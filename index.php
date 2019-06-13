@@ -1,3 +1,4 @@
+
 <?php 
 /*$mysqli = new mysqli('localhost', 'root', '', 'db');
 
@@ -6,14 +7,17 @@
 /*if (!$mysqli->query("INSERT INTO users VALUES ('user2', 'pass2', 'read')")) {
     echo "? ???? ???? ???? (" . $mysqli->errno . ") " . $mysqli->error;
 }*/
+ 
 
-$link = mysqli_connect('localhost', 'root', '', 'bd') 
-
+$link = mysqli_connect('localhost', 'root', '', 'db') 
     or die("??? " . mysqli_error($link)); 
-    mysql_set_charset("CP1251");
-$query ="SELECT * FROM inf";
+    
+$link->set_charset('cp1251');
+
+$query ="SELECT * FROM information";
  
 $result = mysqli_query($link, $query) or die("??? " . mysqli_error($link)); 
+
 if($result)
 {
        $rows = mysqli_num_rows($result); 
