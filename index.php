@@ -31,6 +31,6 @@ if($result)
     
     mysqli_free_result($result);
 }
- 
+ //ntcnjdsq rjvvtynfbjjgfasgoagjaojogajogajogajogajogjaogjojogajoagoj
 mysqli_close($link);
  ?>
