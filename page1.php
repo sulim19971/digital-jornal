@@ -12,8 +12,8 @@ $link = mysqli_connect('localhost', 'root', '', 'db')
 $link->set_charset('cp1251');
 
 //вытаскиваем введенные группу и предмет
-$group = $_GET['group'];
-$discipline = $_GET['discipline'];
+$group = $_POST['group'];
+$discipline = $_POST['discipline'];
 
 $query ="SELECT fio, marcs FROM information WHERE gruppa='".$group."' AND discipline = '".$discipline."'"; 
 $result = mysqli_query($link, $query) or die("??? " . mysqli_error($link)); 
