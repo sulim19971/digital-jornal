@@ -10,16 +10,16 @@
 
 			if(trim($_POST['login']) == '')
 			{
-				$errors[] = 'Введите логин!';
+				$errors[] = 'Р’РІРµРґРёС‚Рµ Р»РѕРіРёРЅ';
 			}
 
 			if(trim($_POST['password']) == '')
 			{
-				$errors[] = 'Введите пароль!';
+				$errors[] = 'Р’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ!';
 			}
 			if(trim($_POST['password']) != trim($_POST['repeat_password']))
 			{
-				$errors[] = 'пароли не совпадают!';
+				$errors[] = 'РџР°СЂРѕР»Рё РЅРµ СЃРѕРІРїР°РґР°СЋС‚';
 			}
 			if(empty($errors))
 			{
@@ -32,14 +32,14 @@
 				if($result)
 	    			$pass = mysqli_fetch_row($result);
 				if(isset($pass))
-	    			echo "<script>alert('Логин занят')</script>";
+	    			echo "<script>alert('Р›РѕРіРёРЅ Р·Р°РЅСЏС‚')</script>";
 	    		else
 	    		{
-					if (!$link->query("INSERT INTO users VALUES ('".$login."', '".$password."', '')")) 
+					if (!$link->query("INSERT INTO users VALUES ('".$login."', '".password_hash($password, PASSWORD_DEFAULT)."', '')")) 
 					{
 	    				echo "? ???? ???? ???? (" . $mysqli->errno . ") " . $mysqli->error;
 	    			}
-	    			echo "<script>alert('Регистрация успешна')</script>";	
+	    			echo "<script>alert('Р РµРіРёСЃС‚СЂР°С†РёСЏ РїСЂРѕС€Р»Р° СѓСЃРїРµС€РЅРѕ')</script>";	
 	    		}			
 			}
 			else
