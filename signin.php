@@ -10,12 +10,12 @@
 
 			if(trim($_POST['login']) == '')
 			{
-				$errors[] = 'Введите логин!';
+				$errors[] = 'Р’РІРµРґРёС‚Рµ Р»РѕРіРёРЅ';
 			}
 
 			if(trim($_POST['password']) == '')
 			{
-				$errors[] = 'Введите пароль!';
+				$errors[] = 'РІРІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ!';
 			}
 			if(empty($errors))
 			{
@@ -27,14 +27,13 @@
 				$result = mysqli_query($link, $query) or die("??? " . mysqli_error($link));
 				if($result)
 	    			$pass = mysqli_fetch_row($result);
-
-				if($pass[0] == $password)
+	    		if( password_verify($password, $pass[0]))
 				{
 					$_SESSION['login'] = $login;
-					header("Location: /index.php"); //перенаправление при успешном входе
+					header("Location: /index.php"); //РїРµСЂРµРЅР°РїСЂР°РІР»РµРЅРёРµ РїСЂРё СѓСЃРїРµС€РЅРѕР№ Р°РІС‚РѕСЂРёР·Р°С†РёРё
 				}
 				else
-					$errors[] = 'Неверный логин или пароль!';
+					echo "<script>alert('РЅРµРІРµСЂРЅС‹Р№ РїР°СЂРѕР»СЊ!')</script>";
 			}
 			else
 			{
@@ -51,9 +50,9 @@
 
 
 	<form method='post' action='signin.php'>
-			<!--Вводим логин -->
+			<!--??? ???-->
     	<input type='text' name='login' placeholder="login"> 
-    		<!--Вводим пароль -->
+    		<!--??? ??? -->
      	<input type='password' name='password' placeholder="password"> 
     <input type='submit' name = 'signin'>
 </form>
