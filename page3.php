@@ -14,7 +14,7 @@ if( isset($data['do_signup']))
     {
         $errors[]='Enter password!';
     }
-    if(trim($data['login']) !=$data['password'])
+    if(trim($data['password2']) !=$data['password'])
     {
         $errors[]='Wrong repassword';
     }
@@ -35,7 +35,7 @@ if( isset($data['do_signup']))
 
 ?>
 
-<form action="/page3.php" method="POST">
+<form action="/signup.php" method="_POST">
 <p>
     <p><strong>Login</strong></p>
     <input type="text" name="login">
