@@ -12,6 +12,7 @@
     		<!--инпут в который вводим предмет -->
      	<input type='input' name='discipline' placeholder="предмет"> 
     <input type='submit'>
+    <p>proverka svyazi</p>
 </form>
 </body>
 </html>
