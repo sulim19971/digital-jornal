@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Июн 13 2019 г., 23:03
+-- Время создания: Июн 19 2019 г., 20:42
 -- Версия сервера: 5.5.25
--- Версия PHP: 5.3.13
+-- Версия PHP: 5.6.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -57,16 +57,16 @@ INSERT INTO `information` (`gruppa`, `fio`, `discipline`, `marcs`) VALUES
 
 CREATE TABLE IF NOT EXISTS `users` (
   `login` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `access` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`login`, `password`) VALUES
-('user1', 'pass'),
-('user2', 'pass2');
+INSERT INTO `users` (`login`, `password`, `access`) VALUES
+('user1', '$2y$10$kYU6fwpeHwyYrHj9dVUIMepF8iRGAHqxvdL/tH7AIj8.4ajqNT00e', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
