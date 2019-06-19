@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Journal - Sign In</title>
+</head>
+<body>
+    <div class="sign-in-parent">
+        <img src="diary2.svg" class="mob-icon">
+        <div class="sign-in">
+            <img src="diary2.svg" class="icon">
+            <div id="status" class="sign-in-header">Sign in to Journal</div>
+            <form id="login" action="login.php" method="post" class="form">
+                <input type="text" name="login" class="field" placeholder="Client ID"><br>
+                <input type="password" name="pass" class="field" placeholder="Password"><br>
+                <input type="submit" value="" class="btn">
+            </form>
+            <span class="signup-btn">Sign up</span>
+            <span class="recoverin-btn">I forgot</span>
+        </div>
+        <div class="helper"></div>
+    </div>
+    </div>
+</body>
+<script src="login.js"></script>
+</html>
