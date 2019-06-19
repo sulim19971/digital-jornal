@@ -1,94 +1,31 @@
 body {
+        background:url(1.jpeg)no-repeat transparent center top /cover  ;
+
     margin: 0;
     -webkit-font-smoothing: antialiased;
     font-family: 'Exo 2', sans-serif;
     font-weight: 300;
     font-size: 12pt;
 }
-.sign-in-parent {
+.gg {
     position: fixed;
     width:100%; 
     height:100%; 
     text-align:center; 
-    background: #fff;
+   
     margin-left: 0%;
     transition: all 1.2s ease-in-out;
 }
-
-.sign-up-parent {
-    position: fixed;
-    width:100%; 
-    height:100%; 
-    text-align:center;
-    background: transparent;
-    margin-left: -100%;
-    transition: all 1.2s ease-in-out;
-}
-
-.recover-parent {
-    position: fixed;
-    width:100%; 
-    height:100%; 
-    text-align:center;
-    background: transparent;
-    right: -100%;
-    transition: all 1.2s ease-in-out;
-}
-
-.sign-in {
+.gg1 {
     display:-moz-inline-box; 
     display:inline-block; 
     vertical-align:middle; 
     width:300pt;
-    padding-top: 20pt;
+    padding-top: 50pt;
     padding-bottom: 20pt;
     border-radius: 60px;
-    background: #fff; 
     zoom:1;
     margin-left: 0%;
-    transition: all 1.2s ease-in-out;
-}
-
-.sign-up {
-    display:-moz-inline-box; 
-    display:inline-block; 
-    vertical-align:middle; 
-    width:300pt;
-    padding-top: 20pt;
-    padding-bottom: 20pt;
-    border-radius: 60px;
-    background: #fff; 
-    zoom:1;
-    transition: all 1.2s ease-out;
-}
-
-.recover {
-    display:-moz-inline-box; 
-    display:inline-block; 
-    vertical-align:middle; 
-    width:300pt;
-    padding-top: 20pt;
-    padding-bottom: 20pt;
-    border-radius: 60px;
-    background: #fff; 
-    zoom:1;
-    transition: all 1.2s ease-out;
-}
-
-.helper {
-    display:-moz-inline-box; 
-    display:inline-block; 
-    height:100%; 
-    width:0px; 
-    vertical-align:middle; 
-    zoom:1; 
-}
-.sign-in-header {
-text-align: center;
-color: #0e3c7b;
-font-size: 35px;
-z-index: 10;
-pointer-events: none;
 }
 
 .icon {
@@ -100,49 +37,32 @@ pointer-events: none;
         display: none;
     }
 
-.border {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    bottom: 0px;
-    right: 0px;
-    border: 1px;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    border-style: solid;
-    border-color: #d9d9d9;
-    border-radius: 2px;
-    -webkit-transition: opacity 0.7s;
-    -moz-transition: opacity 0.7s;
-    -ms-transition: opacity 0.7s;
-    box-shadow: inset 0px 1px 0px 0px #fafafa;
-    -webkit-box-shadow: inset 0px 1px 0px 0px #fafafa;
-    outline: none;
-}
 
+::placeholder{
+    text-align:center;
+    color:green;
+}
 .field {
     -webkit-font-smoothing: antialiased;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+     border: auto;
+      border-radius: 50px;
     width: 60%;
     height: 20pt;
     margin-top: 5px;
-    font-size: 14pt;
-    font-weight: 300;
+    font-size: 8pt;
+    font-weight: 2gg00;
     -webkit-transition: opacity 0.7s;
     -moz-transition: opacity 0.7s;
     -ms-transition: opacity 0.7s;
 }
 
-*:focus {
+/**:focus {
     outline: none;
     -webkit-transition: opacity 0.7s;
     -moz-transition: opacity 0.7s;
     -ms-transition: opacity 0.7s;
     transition: opacity 0.7s;
-}
+}*/
 
 .btn {
     margin-top: 20px;
@@ -154,37 +74,12 @@ pointer-events: none;
     text-align: center;
     font-size: 22px;
     color: #aaa;
-    transition: all 1s;
     border: none;
 }
 
-.btn-plus {
-    margin-top: 20px;
-    background: url(btn-plus.png);
-    background-size: cover;
-    border-radius: 30px;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    font-size: 22px;
-    color: #aaa;
-    transition: all 1s;
-    border: none;
-}
 
-.btn-email {
-    margin-top: 20px;
-    background: url(btn-email.png);
-    background-size: cover;
-    border-radius: 30px;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    font-size: 22px;
-    color: #aaa;
-    transition: all 1s;
-    border: none;
-}
+
+
 
 ::-webkit-input-placeholder {
    font-size: 18px;
@@ -194,7 +89,7 @@ pointer-events: none;
    font-size: 18px;
 }
 
-.btn:hover {
+/*.btn:hover {
     background-size: cover;
     border: none;
     -webkit-animation: btn_anim .4s steps(3) infinite;
@@ -202,169 +97,17 @@ pointer-events: none;
     -ms-animation: btn_anim .4s steps(3) infinite;
     -o-animation: btn_anim .4s steps(3) infinite;
     animation: btn_anim .4s steps(3) infinite;
-}
+}*/
 
-@-webkit-keyframes btn_anim {
-    from { background: url(btn.png); }
-    to { background: url(btn_h.png); }
-}
 
-@-moz-keyframes btn_anim {
-    from { background: url(btn.png); }
-    to { background: url(btn_h.png); }
-}
-
-@-ms-keyframes btn_anim {
-    from { background: url(btn.png); }
-    to { background: url(btn_h.png); }
-}
-
-@-o-keyframes btn_anim {
-    from { background: url(btn.png); }
-    to { background: url(btn_h.png); }
-}
-
-@keyframes btn_anim {
-    from { background: url(btn.png); }
-    to { background: url(btn_h.png); }
-}
-
-.btn:active {
+/*.btn:active {
     color: #07a;
     transition: all 0.7s;
 }
-
-.btn-plus:hover {
-    background-size: cover;
-    border: none;
-    -webkit-animation: btn-plus_anim .4s steps(3) infinite;
-    -moz-animation: btn-plus_anim .4s steps(3) infinite;
-    -ms-animation: btn-plus_anim .4s steps(3) infinite;
-    -o-animation: btn-plus_anim .4s steps(3) infinite;
-    animation: btn-plus_anim .4s steps(3) infinite;
-}
-
-@-webkit-keyframes btn-plus_anim {
-    from { background: url(btn-plus.png); }
-    to { background: url(btn-plus_h.png); }
-}
-
-@-moz-keyframes btn-plus_anim {
-    from { background: url(btn-plus.png); }
-    to { background: url(btn-plus_h.png); }
-}
-
-@-ms-keyframes btn-plus_anim {
-    from { background: url(btn-plus.png); }
-    to { background: url(btn-plus_h.png); }
-}
-
-@-o-keyframes btn-plus_anim {
-    from { background: url(btn-plus.png); }
-    to { background: url(btn-plus_h.png); }
-}
-
-@keyframes btn-plus_anim {
-    from { background: url(btn-plus.png); }
-    to { background: url(btn-plus_h.png); }
-}
-
-.btn-plus:active {
-    color: #07a;
-    transition: all 0.7s;
-}
-
-.btn-email:hover {
-    background-size: cover;
-    border: none;
-    -webkit-animation: btn-email_anim .4s steps(3) infinite;
-    -moz-animation: btn-email_anim .4s steps(3) infinite;
-    -ms-animation: btn-email_anim .4s steps(3) infinite;
-    -o-animation: btn-email_anim .4s steps(3) infinite;
-    animation: btn-email_anim .4s steps(3) infinite;
-}
-
-@-webkit-keyframes btn-email_anim {
-    from { background: url(btn-email.png); }
-    to { background: url(btn-email_h.png); }
-}
-
-@-moz-keyframes btn-email_anim {
-    from { background: url(btn-email.png); }
-    to { background: url(btn-email_h.png); }
-}
-
-@-ms-keyframes btn-email_anim {
-    from { background: url(btn-email.png); }
-    to { background: url(btn-email_h.png); }
-}
-
-@-o-keyframes btn-email_anim {
-    from { background: url(btn-email.png); }
-    to { background: url(btn-email_h.png); }
-}
-
-@keyframes btn-email_anim {
-    from { background: url(btn-email.png); }
-    to { background: url(btn-email_h.png); }
-}
-
-.btn-email:active {
-    color: #07a;
-    transition: all 0.7s;
-}
-
-
-
+*/
 .form {
     margin-top: 20px;
 }
-
-.signin-btn {
-    position: relative;
-    text-decoration: none;
-    color: #0e3c7b;
-    text-align: left;
-    cursor: default;
-}
-
-.signup-btn {
-    position: relative;
-    text-decoration: none;
-    color: #0e3c7b;
-    text-align: left;
-    cursor: default;
-}
-
-.recoverin-btn {
-    text-decoration: none;
-    color: #0e3c7b;
-    margin-left: 200px;
-    cursor: default;
-}
-
-.recoverup-btn {
-    text-decoration: none;
-    color: #0e3c7b;
-    margin-left: 200px;
-    cursor: default;
-}
-
-.recover-signin-btn {
-    position: relative;
-    text-decoration: none;
-    color: #0e3c7b;
-    text-align: left;
-    cursor: default;
-}
-
-.recover-signup-btn {
-    text-decoration: none;
-    color: #0e3c7b;
-    margin-left: 200px;
-    cursor: default;
-}
-
 @media only screen and (max-width : 320px), only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2), only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2), only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2), only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2), only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2), only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3), only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3) {
     body {
         margin: 0;
@@ -373,7 +116,7 @@ pointer-events: none;
         font-weight: 300;
         font-size: 12pt;
     }
-    .sign-in-parent {
+    .gg {
         position: fixed;
         width:100%; 
         height:100%; 
@@ -381,75 +124,19 @@ pointer-events: none;
         background: #fff;
     }
 
-    .sign-up-parent {
-        position: fixed;
-        width:100%; 
-        height:100%; 
-        text-align:center;
-        background: transparent;
-        margin-left: -100%;
-        top: 0;
-        transition: all 1.2s ease-in-out;
-    }
 
-    .recover-parent {
-        position: fixed;
-        width:100%; 
-        height:100%; 
-        top: 0;
-        text-align:center;
-        background: transparent;
-        left: 100%;
-        transition: all 1.2s ease-in-out;
-    }
-
-    .sign-in {
+    .gg1 {
         display: block;
         position: absolute;
         bottom: 0;
         width:300pt;
-        padding-top: 20pt;
+        padding-top: 30pt;
         padding-bottom: 20pt;
         border-radius: 0px;
         background: #fff; 
         zoom:1;
         margin-left: 0%;
-        transition: all 1.2s ease-in-out;
-    }
-
-    .sign-up {
-        display: block;
-        position: absolute;
-        bottom: 0;
-        width:300pt;
-        padding-top: 20pt;
-        padding-bottom: 20pt;
-        border-radius: 0px;
-        background: #fff; 
-        zoom:1;
-        transition: all 1.2s ease-out;
-    }
-
-    .recover {
-        display: block;
-        position: absolute;
-        bottom: 0;
-        width:300pt;
-        padding-top: 20pt;
-        padding-bottom: 20pt;
-        border-radius: 0px;
-        background: #fff; 
-        zoom:1;
-        transition: all 1.2s ease-out;
-    }
-
-    .helper {
-        display:-moz-inline-box; 
-        display:inline-block; 
-        height:100%; 
-        width:0px; 
-        vertical-align:middle; 
-        zoom:1; 
+      
     }
     .sign-in-header {
     text-align: center;
@@ -461,12 +148,12 @@ pointer-events: none;
 
     .icon {
         pointer-events: none;
-        display: none;
+        width:100px;
     }
 
     .mob-icon {
         display: block;
-        width: 80%;
+        width: 50px;
         margin: auto;
         margin-top: 20%;
         pointer-events: none;
@@ -519,7 +206,7 @@ pointer-events: none;
     .btn {
         margin-top: 20px;
         background: url(btn.png);
-        background-size: cover;
+        
         border-radius: 30px;
         width: 40px;
         height: 40px;
@@ -530,34 +217,7 @@ pointer-events: none;
         border: none;
     }
 
-    .btn-plus {
-        margin-top: 20px;
-        background: url(btn-plus.png);
-        background-size: cover;
-        border-radius: 30px;
-        width: 40px;
-        height: 40px;
-        text-align: center;
-        font-size: 22px;
-        color: #aaa;
-        transition: all 1s;
-        border: none;
-    }
-
-    .btn-email {
-        margin-top: 20px;
-        background: url(btn-email.png);
-        background-size: cover;
-        border-radius: 30px;
-        width: 40px;
-        height: 40px;
-        text-align: center;
-        font-size: 22px;
-        color: #aaa;
-        transition: all 1s;
-        border: none;
-    }
-
+   
     ::-webkit-input-placeholder {
        font-size: 18px;
     }
@@ -569,83 +229,8 @@ pointer-events: none;
     .btn:hover {
         background-size: cover;
         border: none;
-        -webkit-animation: btn_anim .4s steps(3) infinite;
-        -moz-animation: btn_anim .4s steps(3) infinite;
-        -ms-animation: btn_anim .4s steps(3) infinite;
-        -o-animation: btn_anim .4s steps(3) infinite;
-        animation: btn_anim .4s steps(3) infinite;
+        
     }
-
-    @-webkit-keyframes btn_anim {
-        from { background: url(btn.png); }
-        to { background: url(btn_h.png); }
-    }
-
-    @-moz-keyframes btn_anim {
-        from { background: url(btn.png); }
-        to { background: url(btn_h.png); }
-    }
-
-    @-ms-keyframes btn_anim {
-        from { background: url(btn.png); }
-        to { background: url(btn_h.png); }
-    }
-
-    @-o-keyframes btn_anim {
-        from { background: url(btn.png); }
-        to { background: url(btn_h.png); }
-    }
-
-    @keyframes btn_anim {
-        from { background: url(btn.png); }
-        to { background: url(btn_h.png); }
-    }
-
-    .btn:active {
-        color: #07a;
-        transition: all 0.7s;
-    }
-
-    .btn-plus:hover {
-        background-size: cover;
-        border: none;
-        -webkit-animation: btn-plus_anim .4s steps(3) infinite;
-        -moz-animation: btn-plus_anim .4s steps(3) infinite;
-        -ms-animation: btn-plus_anim .4s steps(3) infinite;
-        -o-animation: btn-plus_anim .4s steps(3) infinite;
-        animation: btn-plus_anim .4s steps(3) infinite;
-    }
-
-    @-webkit-keyframes btn-plus_anim {
-        from { background: url(btn-plus.png); }
-        to { background: url(btn-plus_h.png); }
-    }
-
-    @-moz-keyframes btn-plus_anim {
-        from { background: url(btn-plus.png); }
-        to { background: url(btn-plus_h.png); }
-    }
-
-    @-ms-keyframes btn-plus_anim {
-        from { background: url(btn-plus.png); }
-        to { background: url(btn-plus_h.png); }
-    }
-
-    @-o-keyframes btn-plus_anim {
-        from { background: url(btn-plus.png); }
-        to { background: url(btn-plus_h.png); }
-    }
-
-    @keyframes btn-plus_anim {
-        from { background: url(btn-plus.png); }
-        to { background: url(btn-plus_h.png); }
-    }
-
-    .btn-plus:active {
-        color: #07a;
-        transition: all 0.7s;
-    }
-
     .btn-email:hover {
         background-size: cover;
         border: none;
@@ -654,86 +239,8 @@ pointer-events: none;
         -ms-animation: btn-email_anim .4s steps(3) infinite;
         -o-animation: btn-email_anim .4s steps(3) infinite;
         animation: btn-email_anim .4s steps(3) infinite;
-    }
-
-    @-webkit-keyframes btn-email_anim {
-        from { background: url(btn-email.png); }
-        to { background: url(btn-email_h.png); }
-    }
-
-    @-moz-keyframes btn-email_anim {
-        from { background: url(btn-email.png); }
-        to { background: url(btn-email_h.png); }
-    }
-
-    @-ms-keyframes btn-email_anim {
-        from { background: url(btn-email.png); }
-        to { background: url(btn-email_h.png); }
-    }
-
-    @-o-keyframes btn-email_anim {
-        from { background: url(btn-email.png); }
-        to { background: url(btn-email_h.png); }
-    }
-
-    @keyframes btn-email_anim {
-        from { background: url(btn-email.png); }
-        to { background: url(btn-email_h.png); }
-    }
-
-    .btn-email:active {
-        color: #07a;
-        transition: all 0.7s;
-    }
+    
 
 
 
-    .form {
-        margin-top: 20px;
-    }
 
-    .signin-btn {
-        position: relative;
-        text-decoration: none;
-        color: #0e3c7b;
-        text-align: left;
-        cursor: default;
-    }
-
-    .signup-btn {
-        position: relative;
-        text-decoration: none;
-        color: #0e3c7b;
-        text-align: left;
-        cursor: default;
-    }
-
-    .recoverin-btn {
-        text-decoration: none;
-        color: #0e3c7b;
-        margin-left: 200px;
-        cursor: default;
-    }
-
-    .recoverup-btn {
-        text-decoration: none;
-        color: #0e3c7b;
-        margin-left: 200px;
-        cursor: default;
-    }
-
-    .recover-signin-btn {
-        position: relative;
-        text-decoration: none;
-        color: #0e3c7b;
-        text-align: left;
-        cursor: default;
-    }
-
-    .recover-signup-btn {
-        text-decoration: none;
-        color: #0e3c7b;
-        margin-left: 200px;
-        cursor: default;
-    }
-}
