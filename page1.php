@@ -39,3 +39,4 @@ if($result)
 
 mysqli_close($link);
  ?>
+ <a href="signin.php">Sign</a>
