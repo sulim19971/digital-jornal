@@ -11,12 +11,12 @@
 
 			if(trim($_POST['login']) == '')
 			{
-				$errors[] = 'Р’РІРµРґРёС‚Рµ Р»РѕРіРёРЅ';
+				$errors[] = 'Введите логин!';
 			}
 
-			if(trim($_POST['password']) == '')
+			if($_POST['password'] == '')
 			{
-				$errors[] = 'РІРІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ!';
+				$errors[] = 'Введите пароль!';
 			}
 			if(empty($errors))
 			{
@@ -24,17 +24,24 @@
 				$password = $_POST['password'];
 
 			
-				$query = "SELECT password FROM users WHERE login='".$login."'"; 
+				$query = "SELECT password, access FROM users WHERE login='".$login."'"; 
 				$result = mysqli_query($link, $query) or die("??? " . mysqli_error($link));
+
 				if($result)
 	    			$pass = mysqli_fetch_row($result);
 	    		if($password == $pass[0])
 				{
 					$_SESSION['login'] = $login;
-					header("Location: /index.php"); //РїРµСЂРµРЅР°РїСЂР°РІР»РµРЅРёРµ РїСЂРё СѓСЃРїРµС€РЅРѕР№ Р°РІС‚РѕСЂРёР·Р°С†РёРё
+					if($pass[1] == "admin")
+					{
+						header("Location: /signup.php"); //куда перенаправит при успешном входе админ
+						$_SESSION['admin'] = "true";
+					}
+					else
+						header("Location: /page2.php"); //куда перенаправит при успешном входе не админ
 				}
 				else
-					echo "<script>alert('РЅРµРІРµСЂРЅС‹Р№ РїР°СЂРѕР»СЊ!')</script>";
+					echo "<script>alert('Неверный пароль!')</script>";
 			}
 			else
 			{

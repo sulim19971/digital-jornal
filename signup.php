@@ -1,5 +1,14 @@
 <?php
 		session_start();
+
+		if(empty($_SESSION['login']) or $_SESSION['admin'] != "true")
+		{
+			header("Location: /signin.php"); 
+		}
+
+
+
+
 		$link = mysqli_connect('localhost', 'root', '', 'db') 
 	    or die("??? " . mysqli_error($link));     
 		$link->set_charset('cp1251');
@@ -10,16 +19,16 @@
 
 			if(trim($_POST['login']) == '')
 			{
-				$errors[] = 'Р’РІРµРґРёС‚Рµ Р»РѕРіРёРЅ';
+				$errors[] = 'Введите логин';
 			}
 
-			if(trim($_POST['password']) == '')
+			if($_POST['password'] == '')
 			{
-				$errors[] = 'Р’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ!';
+				$errors[] = 'Введите пароль!';
 			}
-			if(trim($_POST['password']) != trim($_POST['repeat_password']))
+			if($_POST['password'] != $_POST['repeat_password'])
 			{
-				$errors[] = 'РџР°СЂРѕР»Рё РЅРµ СЃРѕРІРїР°РґР°СЋС‚';
+				$errors[] = 'Пароли не совпадают';
 			}
 			
 			if(empty($errors))
@@ -33,14 +42,14 @@
 				if($result)
 	    			$pass = mysqli_fetch_row($result);
 				if(isset($pass))
-	    			echo "<script>alert('Р›РѕРіРёРЅ Р·Р°РЅСЏС‚')</script>";
+	    			echo "<script>alert('Логин занят')</script>";
 	    		else
 	    		{
 					if (!$link->query("INSERT INTO users VALUES ('".$login."', '".$password."', '')")) 
 					{
-	    				echo "? ???? ???? ???? (" . $mysqli->errno . ") " . $mysqli->error;
+	    				echo "Ошибка (" . $mysqli->errno . ") " . $mysqli->error;
 	    			}
-	    			echo "<script>alert('Р РµРіРёСЃС‚СЂР°С†РёСЏ РїСЂРѕС€Р»Р° СѓСЃРїРµС€РЅРѕ')</script>";	
+	    			echo "<script>alert('Регистрация прошла успешно')</script>";	
 	    		}			
 			}
 			else

@@ -1,6 +1,5 @@
-
-
 <?php 
+session_start();
 /*$mysqli = new mysqli('localhost', 'root', '', 'db');
 
 /*if (!$mysqli->query("INSERT INTO users VALUES ('user2', 'pass2', 'read')")) {
@@ -12,9 +11,9 @@ $link = mysqli_connect('localhost', 'root', '', 'db')
     or die("??? " . mysqli_error($link));     
 $link->set_charset('cp1251');
 
-//вытаскиваем введенные группу и предмет
-$group = $_GET['group'];
-$discipline = $_GET['discipline'];
+
+$group = $_SESSION['group'];
+$discipline = $_SESSION['discipline'];
 
 
 $query ="SELECT fio, marcs FROM information WHERE gruppa='".$group."' AND discipline = '".$discipline."'"; 
@@ -24,12 +23,12 @@ if($result)
 {
     $rows = mysqli_num_rows($result); 
      
-    echo "<table><tr><th></th><th></th><th></th></tr>";
+    echo "<table><tr><th></th><th></th></tr>";
     for ($i = 0 ; $i < $rows ; ++$i)
     {
         $row = mysqli_fetch_row($result);
         echo "<tr>";
-            for ($j = 0 ; $j < 3 ; ++$j) 
+            for ($j = 0 ; $j < 2 ; ++$j) 
                 echo "<td>$row[$j]</td>";
         echo "</tr>";
     }
@@ -41,3 +40,13 @@ if($result)
 
 mysqli_close($link);
  ?>
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title></title>
+ </head>
+ <body>
+ 	<a href="signin.php">�����</a>
+ </body>
+ </html>
