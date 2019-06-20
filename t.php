@@ -1,6 +1,6 @@
-<?php
+﻿<?php
 		session_start();
-		$link = mysqli_connect('localhost', 'root', '', 'db') 
+		$link = mysqli_connect('localhost', 'root', '1234', 'gg') 
 	    or die("??? " . mysqli_error($link));     
 		$link->set_charset('cp1251');
 
@@ -30,7 +30,7 @@
 	    		if( password_verify($password, $pass[0]))
 				{
 					$_SESSION['login'] = $login;
-					header("Location: /index.php"); //перенаправление при успешной авторизации
+					header("Location: /signin.php"); //перенаправление при успешной авторизации
 				}
 				else
 					echo "<script>alert('неверный пароль!')</script>";
@@ -42,25 +42,3 @@
 		}
 
 	?>
-	
-
-<html>
-	 <link rel="stylesheet" href="login.css">
-<style>
-
-</style>
-<body>
-	<div class="gg" style="background:url(2.jpg)no-repeat transparent center top /cover  ">
-        
-        <div class="gg1" >
-            <img src="27.png" style="width: 200px;" class="icon">
-            <form  action="signin.php" method="post" class="form">
-                <input type='text' name='login' placeholder="login" class="field" ><br>
-                <input type='password' name='password' placeholder="password" class="field" ><br>
-                <input type="submit" name = 'signin' value="" class="btn">
-            </form>
-        </div>
-    </div>
-    </div>
-</body>
-</html>
