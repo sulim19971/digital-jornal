@@ -1,4 +1,5 @@
 <?php
+
 		session_start();
 		$link = mysqli_connect('localhost', 'root', '', 'db') 
 	    or die("??? " . mysqli_error($link));     
@@ -27,7 +28,7 @@
 				$result = mysqli_query($link, $query) or die("??? " . mysqli_error($link));
 				if($result)
 	    			$pass = mysqli_fetch_row($result);
-	    		if( password_verify($password, $pass[0]))
+	    		if($password == $pass[0])
 				{
 					$_SESSION['login'] = $login;
 					header("Location: /index.php"); //перенаправление при успешной авторизации
@@ -45,22 +46,16 @@
 	
 
 <html>
-	 <link rel="stylesheet" href="login.css">
-<style>
 
-</style>
 <body>
-	<div class="gg" style="background:url(2.jpg)no-repeat transparent center top /cover  ">
-        
-        <div class="gg1" >
-            <img src="27.png" style="width: 200px;" class="icon">
-            <form  action="signin.php" method="post" class="form">
-                <input type='text' name='login' placeholder="login" class="field" ><br>
-                <input type='password' name='password' placeholder="password" class="field" ><br>
-                <input type="submit" name = 'signin' value="" class="btn">
-            </form>
-        </div>
-    </div>
-    </div>
+
+
+	<form method='post' action='signin.php'>
+			<!--??? ???-->
+    	<input type='text' name='login' placeholder="login"> 
+    		<!--??? ??? -->
+     	<input type='password' name='password' placeholder="password"> 
+    <input type='submit' name = 'signin'>
+</form>
 </body>
 </html>

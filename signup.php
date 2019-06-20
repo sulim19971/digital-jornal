@@ -21,6 +21,7 @@
 			{
 				$errors[] = 'Пароли не совпадают';
 			}
+			
 			if(empty($errors))
 			{
 				$login = $_POST['login'];
@@ -35,7 +36,7 @@
 	    			echo "<script>alert('Логин занят')</script>";
 	    		else
 	    		{
-					if (!$link->query("INSERT INTO users VALUES ('".$login."', '".password_hash($password, PASSWORD_DEFAULT)."', '')")) 
+					if (!$link->query("INSERT INTO users VALUES ('".$login."', '".$password."', '')")) 
 					{
 	    				echo "? ???? ???? ???? (" . $mysqli->errno . ") " . $mysqli->error;
 	    			}
