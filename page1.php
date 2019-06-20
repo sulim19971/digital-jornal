@@ -1,5 +1,5 @@
-
 <?php 
+session_start();
 /*$mysqli = new mysqli('localhost', 'root', '', 'db');
 
 /*if (!$mysqli->query("INSERT INTO users VALUES ('user2', 'pass2', 'read')")) {
@@ -12,8 +12,9 @@ $link = mysqli_connect('localhost', 'root', '', 'db')
 $link->set_charset('cp1251');
 
 //вытаскиваем введенные группу и предмет
-$group = $_POST['group'];
-$discipline = $_POST['discipline'];
+$group = $_SESSION['group'];
+$discipline = $_SESSION['discipline'];
+
 
 $query ="SELECT fio, marcs FROM information WHERE gruppa='".$group."' AND discipline = '".$discipline."'"; 
 $result = mysqli_query($link, $query) or die("??? " . mysqli_error($link)); 
@@ -39,4 +40,3 @@ if($result)
 
 mysqli_close($link);
  ?>
- <a href="signin.php">Sign</a>

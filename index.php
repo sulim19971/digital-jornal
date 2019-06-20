@@ -1,23 +1,42 @@
+<?php
+		session_start();
+		if(isset($_POST['send']))
+		{
+			if(trim($_POST['group']) == '')
+			{
+				$errors[] = 'Введите группу';
+			}
 
-<!DOCTYPE html>
+			if(trim($_POST['discipline']) == '')
+			{
+				$errors[] = 'введите предмет!';
+			}
+			if(empty($errors))
+			{
+				$_SESSION['group'] = $_POST['group'];
+				$_SESSION['discipline'] = $_POST['discipline'];
+				header("Location: /page1.php");
+			}
+			else
+			{
+				echo "<script>alert('".array_shift($errors)."')</script>";
+			}	
+		}
+?>
+
 <html>
 <head>
-	 <link rel="stylesheet" href="login.css">
+	
 	<title></title>
 	<meta charset="windows 1251">
 </head>
 <body>
-	<div class="gg">
-        
-        <div class="gg1">
-            <img src="27.png" style="width: 200px;" class="icon">
-            <form  action="page1.php" method="post" class="form">
-                <input type='input'  name='group' class="field" placeholder="groop"><br>
-                <input type='input' name='discipline'placeholder="discipline" class="field" ><br>
-                <input type="submit" value="" class="btn">
-            </form>
-        </div>
-    </div>
-    </div>
+
+	<form method='post' action='index.php'>
+		
+    <input type='input' name='group' placeholder="???"> <!--??????????? ??? -->
+     <input type='input' name='discipline' placeholder="????"> <!--??????????? ????-->
+    <input type='submit' name = 'send'>
+</form>
 </body>
 </html>
