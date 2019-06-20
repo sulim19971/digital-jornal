@@ -1,68 +1,73 @@
 <?php
-		session_start();
-		$link = mysqli_connect('localhost', 'root', '', 'db') 
-	    or die("??? " . mysqli_error($link));     
-		$link->set_charset('cp1251');
+require "db.php";
+$data=$_POST;
+if( isset($data['do_signup']))
+{
+    //регистрация
+    
+    // $errors=array();
+    // if(trim($data['login']) =='')
+    // {
+    //     $errors[]='Enter login!';
+    // }
+    // if(trim($data['password']) =='')
+    // {
+    //     $errors[]='Enter password!';
+    // }
+    // if(trim($data['password2']) !=$data['password'])
+    // {
+    //     $errors[]='Wrong repassword';
+    // }
+//   if   (empty($errors)){
+      //cool
+// $post = R::dispense( 'post' );
+//     $post->title = 'fck';
+//     $id = R::store( $post );
+        $user=R::dispense('users');
+        $user->name=$data['login'];
+        $user->role=$data['password'];
+        $user->pass=$data['access'];
+        R::store($users);
+        // $user2 = R::find('user', 'role=a');
+        // echo $user2;
+     
+    // echo "<table><tr><th></th><th></th><th></th></tr>";
+    // for ($i = 0 ; $i < 6 ; ++$i)
+    // {
+    //     echo "<tr>";
+    //         for ($j = 0 ; $j < 3 ; ++$j) 
+    //             echo "<td>$user2[$j]</td>";
+    //     echo "</tr>";
+    // }
+    // echo "</table>";
 
-		if(isset($_POST['signup']))
-		{
-			$errors = array();
+        // echo ' <div "style=color:green;">','reg complite','</div><hr>';       
+        // }
+//   else{
+//       echo '<div style="color:red;">'.array_shift($errors).'</div><hr>';
+//   }
+}
+?>
 
-			if(trim($_POST['login']) == '')
-			{
-				$errors[] = 'Введите логин';
-			}
+<form action="/signup.php" method="POST">
+<p>
+    <p><strong>Login</strong></p>
+    <input type="text" name="name">
+</p>
+<p>
+    <p><strong>Type role</strong></p>
+    <input type="text" name="role">
+</p>
+<p>
+    <p><strong>Password</strong></p>
+    <input type="password" name="pass">
+</p>
+<!-- <p>
+    <p><strong>Type password again</strong></p>
+    <input type="password" name="password2" value="<php? echo @$data['password2']; ?>">
+</p> -->
 
-			if(trim($_POST['password']) == '')
-			{
-				$errors[] = 'Введите пароль!';
-			}
-			if(trim($_POST['password']) != trim($_POST['repeat_password']))
-			{
-				$errors[] = 'Пароли не совпадают';
-			}
-			if(empty($errors))
-			{
-				$login = $_POST['login'];
-				$password = $_POST['password'];
-
-				
-				$query = "SELECT login FROM users WHERE login='".$login."'"; 
-				$result = mysqli_query($link, $query) or die("??? " . mysqli_error($link));
-				if($result)
-	    			$pass = mysqli_fetch_row($result);
-				if(isset($pass))
-	    			echo "<script>alert('Логин занят')</script>";
-	    		else
-	    		{
-					if (!$link->query("INSERT INTO users VALUES ('".$login."', '".password_hash($password, PASSWORD_DEFAULT)."', '')")) 
-					{
-	    				echo "? ???? ???? ???? (" . $mysqli->errno . ") " . $mysqli->error;
-	    			}
-	    			echo "<script>alert('Регистрация прошла успешно')</script>";	
-	    		}			
-			}
-			else
-			{
-				echo "<script>alert('".array_shift($errors)."')</script>";
-			}		
-		}
-
-	?>
-	
-<html>
-
-<body>
-
-
-
-	<form method='post' action='signup.php'>
-			<!--Вводим логин -->
-    	<input type='text' name='login' placeholder="login"> 
-    		<!--Вводим пароль -->
-     	<input type='password' name='password' placeholder="password"> 
-     	<input type='password' name='repeat_password' placeholder="repeat password"> 
-    <input type='submit' name = 'signup'>
+<p>
+    <button type="submit" name="do_signup">reg</button>
+</p>
 </form>
-</body>
-</html>

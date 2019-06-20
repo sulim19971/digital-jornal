@@ -30,7 +30,8 @@
 	    		if( password_verify($password, $pass[0]))
 				{
 					$_SESSION['login'] = $login;
-					header("Location: /index.php"); //перенаправление при успешной авторизации
+					
+					header("Location: signup.php"); //перенаправление при успешной авторизации
 				}
 				else
 					echo "<script>alert('неверный пароль!')</script>";
