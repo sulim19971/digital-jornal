@@ -9,7 +9,7 @@
 
 
 
-		$link = mysqli_connect('localhost', 'root', '', 'db') 
+		$link = mysqli_connect('localhost', 'root', '1234', 'gg') 
 	    or die("??? " . mysqli_error($link));     
 		$link->set_charset('cp1251');
 

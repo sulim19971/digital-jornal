@@ -26,17 +26,22 @@
 
 <html>
 <head>
-	
+	 <link rel="stylesheet" href="login.css">
 	<title></title>
 	<meta charset="windows 1251">
 </head>
 <body>
-
-	<form method='post' action='index.php'>
-		
-    <input type='input' name='group' placeholder="группа"> <!--Вводим группу -->
-     <input type='input' name='discipline' placeholder="предмет"> <!--Вводим предмет-->
-    <input type='submit' name = 'send'>
+<div class="gg">
+        
+        <div class="gg1">
+        	<img src="27.png" style="width: 200px;" class="icon">
+	<form method='post' action='index.php'  class="form">
+    <input type='input' class="field" name='group' placeholder="group"> 
+     <input type='input'class="field" name='discipline' 
+     placeholder="discipline"> <br>
+    <input class="btn" type='submit' name = 'send' value="">
 </form>
+</div>
+</div>
 </body>
 </html>

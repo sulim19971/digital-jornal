@@ -1,7 +1,7 @@
 <?php
 
 		session_start();
-		$link = mysqli_connect('localhost', 'root', '', 'db') 
+		$link = mysqli_connect('localhost', 'root', '1234', 'gg') 
 	    or die("??? " . mysqli_error($link));     
 		$link->set_charset('cp1251');
 
@@ -55,14 +55,20 @@
 <html>
 
 <body>
-
-
+<link rel="stylesheet" href="./login.css">
+<div class="gg" style="background:url(2.jpg)no-repeat transparent center top /cover  ">
+        
+        <div class="gg1" >
+        	<img src="27.png" style="width: 200px;" class="icon">
 	<form method='post' action='signin.php'>
 			<!--??? ???-->
-    	<input type='text' name='login' placeholder="login"> 
+    	<input type='text' name='login' placeholder="login" class="field"> 
     		<!--??? ??? -->
-     	<input type='password' name='password' placeholder="password"> 
-    <input type='submit' name = 'signin'>
+     	<input type='password' name='password' placeholder="password" class="field"> <br>
+    <input type='submit' name = 'signin' value="" class="btn">
 </form>
+</div>
+</div>
+
 </body>
 </html>
